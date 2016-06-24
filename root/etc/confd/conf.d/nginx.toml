@@ -1,0 +1,9 @@
+[template]
+src_url = "_CONFIG_URL_"
+src = "_CONFIG_SRC_"
+dest = "/etc/nginx/nginx.conf"
+keys = [ "/" ]
+owner = "root"
+mode = "0644"
+check_cmd = "/usr/sbin/nginx -t -c {{.src}}"
+reload_cmd = "/usr/sbin/nginx -s reload"
