@@ -1,6 +1,5 @@
 [template]
-src_url = "_CONFIG_URL_"
-src = "_CONFIG_SRC_"
+src = "nginx.conf"
 dest = "/etc/nginx/nginx.conf"
 keys = [ "/" ]
 owner = "root"

@@ -3,9 +3,9 @@ FROM nginx:1.11.1-alpine
 RUN apk add --no-cache s6 && \
     \
     apk add --no-cache go git gcc musl-dev && \
-    git clone https://github.com/monder/confd /src/confd && \
+    git clone https://github.com/kelseyhightower/confd /src/confd && \
     cd /src/confd && \
-    git checkout -q --detach "2d4259e" && \
+    git checkout -q --detach "v0.11.0" && \
     cd /src/confd/src/github.com/kelseyhightower/confd && \
     GOPATH=/src/confd/vendor:/src/confd go build -a -installsuffix cgo -ldflags '-extld ld -extldflags -static' -x . && \
     mv ./confd /bin/ && \
